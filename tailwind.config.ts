@@ -1,4 +1,6 @@
 import type { Config } from 'tailwindcss';
+import { fontFamily } from "tailwindcss/defaultTheme";
+// const fontFamily = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   darkMode: ['class'],
@@ -50,6 +52,12 @@ const config: Config = {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
+        neon: {
+            blue: "#00FFFF",
+            purple: "#FF00FF",
+            pink: "#FF1493",
+            green: "#39FF14",
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -60,6 +68,10 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+      },
+      fontFamily: {
+          sans: ["var(--font-sans)", ...fontFamily.sans],
+          arcade: ["Press Start 2P", "cursive"],
       },
       keyframes: {
         'accordion-down': {
@@ -78,10 +90,15 @@ const config: Config = {
             height: '0',
           },
         },
+        neon: {
+            "0%, 100%": { opacity: 1 },
+            "50%": { opacity: 0.5 },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        neon: "neon 1.5s ease-in-out infinite",
       },
     },
   },
